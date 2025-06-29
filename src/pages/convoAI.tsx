@@ -51,7 +51,7 @@ const ConversationPage: React.FC = () => {
 
     const { showAlert, MessageModalComponent } = useMessageModal();
 
-    const BACKEND_URL = 'http://localhost:5000';
+    const BACKEND_URL = 'https://bolt-backend-jvtg.onrender.com/';
 
     // --- Speech Recognition using react-speech-recognition ---
     const {
