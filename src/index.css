@@ -1,0 +1,377 @@
+/* index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define CSS variables for colors, shadows, and transitions */
+:root {
+  /* Light Theme - Refined, airy, crisp (No major changes, keeping previous premium iteration) */
+  --color-background-primary: #fdfdff;
+  --color-background-secondary: #ffffff;
+  --color-text-primary: #1e1e2d;
+  --color-text-secondary: #7a7a8a;
+  --color-text-accent: #0077c2;
+  --color-border: #e8e8ed;
+  --color-shadow-light: rgba(0, 0, 0, 0.03);
+  --color-shadow-medium: rgba(0, 0, 0, 0.07);
+  --color-shadow-strong: rgba(0, 0, 0, 0.12);
+  --color-hover-light: #f4f4f8;
+  --color-input-bg: #ffffff;
+  --color-input-border: #dcdce1;
+
+  /* Button Colors */
+  --color-button-primary-bg: #0077c2;
+  --color-button-primary-hover: #005a99;
+  --color-button-secondary-bg: #e2e4e8;
+  --color-button-secondary-text: #1e1e2d;
+  --color-button-secondary-hover: #cbced4;
+
+  /* Feature/Accent Colors */
+  --color-feature-icon-1: #0077c2;
+  --color-feature-icon-2: #38b000;
+  --color-feature-icon-3: #9b5de5;
+  --color-feature-icon-4: #ff8c00;
+  --color-feature-bg-hover: rgba(0, 0, 0, 0.02);
+
+  /* Progress Tracker Specific Colors */
+  --color-progress-blue-bg: #e6f2fa;
+  --color-progress-blue-text: #0077c2;
+  --color-progress-green-bg: #e9f8e9;
+  --color-progress-green-text: #38b000;
+  --color-progress-purple-bg: #f5edfd;
+  --color-progress-purple-text: #9b5de5;
+  --color-progress-red-bg: #ffebe6;
+  --color-progress-red-text: #e63946;
+  --color-progress-table-header-bg: #f2f2f7;
+  --color-progress-table-row-hover: #fafafa;
+
+  /* Chat Specific Colors */
+  --color-chat-bg: #f7f7fa;
+  --color-chat-user-message-bg: #0077c2;
+  --color-chat-user-message-text: #ffffff;
+  --color-chat-ai-message-bg: #eef1f4;
+  --color-chat-ai-message-text: #1e1e2d;
+
+  /* Profile icon color in light mode */
+  --color-profile-icon: #7a7a8a;
+
+  /* Gemini Icon Gradient for light theme */
+  --gemini-icon-gradient: linear-gradient(
+    to right top,
+    #00c6ff,    /* Light blue */
+    #0072ff,    /* Royal blue */
+    #6a00ff     /* Purple */
+  );
+}
+
+.dark {
+  /* Dark Theme - Premium "Silver in Black" Aesthetic */
+  --color-background-primary: #0a0a0a; /* Deep, rich pure black */
+  --color-background-secondary: #121212; /* Slightly lighter, still very dark for cards/modals */
+  --color-text-primary: #e0e0e0; /* Bright, clear silver-white for main text */
+  --color-text-secondary: #a8a8a8; /* Muted silver-gray for secondary text */
+  --color-text-accent: #0088ff; /* A vibrant, yet sophisticated blue for accent */
+  --color-border: #333333; /* Dark gray border, subtle contrast */
+  --color-shadow-light: rgba(0, 0, 0, 0.4); /* Pronounced, soft shadows for depth */
+  --color-shadow-medium: rgba(0, 0, 0, 0.6);
+  --color-shadow-strong: rgba(0, 0, 0, 0.8);
+  --color-hover-light: #1a1a1a; /* Very subtle hover for dark backgrounds */
+  --color-input-bg: #1c1c1c; /* Dark input background */
+  --color-input-border: #444444; /* Silver-ish input border for subtle definition */
+
+  /* Button Colors - Clean and modern */
+  --color-button-primary-bg: #0088ff; /* Matches accent blue */
+  --color-button-primary-hover: #0066cc;
+  --color-button-secondary-bg: #282828; /* Dark gray for secondary buttons */
+  --color-button-secondary-text: #e0e0e0; /* Silver-white text */
+  --color-button-secondary-hover: #3a3a3a;
+
+  /* Feature/Accent Colors - Carefully selected for contrast and luxury */
+  --color-feature-icon-1: #0088ff; /* Accent Blue */
+  --color-feature-icon-2: #4CAF50; /* Clean Green */
+  --color-feature-icon-3: #8a2be2; /* Deep Purple */
+  --color-feature-icon-4: #FFC107; /* Golden Yellow */
+  --color-feature-bg-hover: rgba(255, 255, 255, 0.07); /* Subtle white hover for features */
+
+  /* Progress Tracker Specific Colors - Clear states with silver tones */
+  --color-progress-blue-bg: #002b55;
+  --color-progress-blue-text: #0088ff;
+  --color-progress-green-bg: #143d1a;
+  --color-progress-green-text: #4CAF50;
+  --color-progress-purple-bg: #2c0b4d;
+  --color-progress-purple-text: #8a2be2;
+  --color-progress-red-bg: #4a1010;
+  --color-progress-red-text: #ff4444; /* Clean, slightly desaturated red */
+  --color-progress-table-header-bg: #1f1f1f;
+  --color-progress-table-row-hover: #2a2a2a;
+  --color-gradient-start: #00c6ff; /* Light blue */
+  --color-gradient-mid: #0072ff;    /* Royal blue */
+  --color-gradient-end: #6a00ff;    /* Purple */
+  /* Chat Specific Colors */
+  --color-chat-bg: #121212;
+  --color-chat-user-message-bg: #0088ff;
+  --color-chat-user-message-text: #ffffff;
+  --color-chat-ai-message-bg: #222222;
+  --color-chat-ai-message-text: #e0e0e0;
+
+  /* Profile icon color in dark mode */
+  --color-profile-icon: #e0e0e0;
+
+  /* Gemini Icon Gradient for dark theme */
+  --gemini-icon-gradient: linear-gradient(
+    to right top,
+    #3f5efb, /* Deeper blue */
+    #fc466b, /* Reddish pink */
+    #ffa800  /* Orange/gold */
+  );
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Base styles for interactive elements */
+button, input[type="submit"], input[type="button"], a {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom focus ring for accessibility - More pronounced and elegant */
+:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  /* Using a more generalized rgba for accent, assuming it will blend well with silver */
+  box-shadow: 0 0 0 3px var(--color-text-accent), 0 0 0 6px rgba(var(--color-text-accent-rgb, 0, 136, 255), 0.3) inset;
+  border-radius: 10px;
+}
+
+/* Animations for premium feel */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 1.0s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* Subtle glow for buttons on hover/focus - more refined glow */
+.button-glow:hover {
+  /* Using a more generalized rgba for button primary background, assuming it's dynamic */
+  box-shadow: 0 0 0 5px rgba(var(--color-button-primary-bg-rgb, 0, 136, 255), 0.2), 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.button-glow:focus-visible {
+  box-shadow: 0 0 0 5px rgba(var(--color-button-primary-bg-rgb, 0, 136, 255), 0.4), 0 0 0 8px rgba(var(--color-button-primary-bg-rgb, 0, 136, 255), 0.15) inset, 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* Specific delay classes for staggered animations */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Testimonials Marquee Animation - slightly slower, more elegant */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 60s linear infinite;
+  animation-play-state: running;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  width: 320px;
+  margin-right: 48px;
+}
+
+/* Custom scrollbar */
+
+/* Gradient Text Styles - Ensure visibility against both light/dark */
+.text-gradient-red-orange {
+  background: linear-gradient(to right, #ff6b6b, #ffa07a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback for browsers that don't support text clipping */
+}
+.gemini-star-gradient {
+  background: linear-gradient(
+    to top right,
+    #00c6ff,    /* light blue */
+    #0072ff,    /* royal blue */
+    #6a00ff     /* purple-ish */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+.text-gradient-purple-pink {
+  background: linear-gradient(to right, #8a2be2, #ff69b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-blue-green {
+  background: linear-gradient(to right, #007bff, #28a745);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to right, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.audio-wave-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px; /* Wider for more bars */
+    height: 80px; /* Taller animation area */
+    overflow: hidden;
+}
+
+.bar-large {
+    width: 8px; /* Wider bars */
+    height: 8px; /* Taller initial height */
+    background: var(--color-text-accent); /* Color of the bars */
+    margin: 0 3px; /* More spacing between bars */
+    border-radius: 4px; /* Slightly more rounded */
+    animation: wave-animation-large 1.5s ease-in-out infinite alternate; /* Slower, more pronounced animation */
+}
+
+/* Staggered delays for a dynamic wave effect */
+.bar-large:nth-child(1) { animation-delay: 0.05s; }
+.bar-large:nth-child(2) { animation-delay: 0.1s; }
+.bar-large:nth-child(3) { animation-delay: 0.15s; }
+.bar-large:nth-child(4) { animation-delay: 0.2s; }
+.bar-large:nth-child(5) { animation-delay: 0.25s; }
+.bar-large:nth-child(6) { animation-delay: 0.3s; }
+.bar-large:nth-child(7) { animation-delay: 0.35s; }
+.bar-large:nth-child(8) { animation-delay: 0.4s; }
+.bar-large:nth-child(9) { animation-delay: 0.45s; }
+.bar-large:nth-child(10) { animation-delay: 0.5s; }
+.bar-large:nth-child(11) { animation-delay: 0.55s; }
+.bar-large:nth-child(12) { animation-delay: 0.6s; }
+.bar-large:nth-child(13) { animation-delay: 0.65s; }
+.bar-large:nth-child(14) { animation-delay: 0.7s; }
+.bar-large:nth-child(15) { animation-delay: 0.75s; }
+
+
+@keyframes wave-animation-large {
+    0%, 100% {
+        transform: scaleY(1); /* Original size */
+        background-color: var(--color-text-accent);
+    }
+    25% {
+        transform: scaleY(4); /* Goes up significantly */
+        background-color: var(--color-feature-icon-1); /* Change color slightly */
+    }
+    50% {
+        transform: scaleY(8); /* Goes much higher */
+        background-color: var(--color-text-accent);
+    }
+    75% {
+        transform: scaleY(3); /* Comes down */
+        background-color: var(--color-feature-icon-1);
+    }
+}
+
+/* Optional: Fade-in effect for the main container */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+}
+/* Custom Scrollbar Styles for Webkit Browsers (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Adjust width as desired, 3px might be too thin */
+  height: 8px; /* For horizontal scrollbars */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-background-primary); /* Use your background color variable */
+  border-radius: 10px; /* Rounded track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-text-tertiary); /* Default color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded thumb */
+  border: 2px solid var(--color-background-primary); /* Optional: creates a border matching track background */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary); /* Color on hover */
+}
+
+/* Custom Scrollbar Styles for Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin; /* 'auto' or 'thin' */
+  scrollbar-color: var(--color-text-tertiary) var(--color-background-primary); /* thumb color track color */
+}
+
+/* New CSS to completely hide the scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
