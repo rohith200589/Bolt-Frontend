@@ -361,7 +361,7 @@ const MockTestGenerator: React.FC = () => {
             const headers: HeadersInit = payload.type === 'file' ? {} : { 'Content-Type': 'application/json' };
             const body = payload.type === 'file' ? formData : JSON.stringify(Object.fromEntries(formData.entries()));
 
-            const response = await fetch('http://localhost:5000/generate_test', { // Your backend API endpoint
+            const response = await fetch('https://bolt-backend-jvtg.onrender.com/generate_test', { // Your backend API endpoint
                 method: 'POST',
                 body: body,
                 headers: headers,
