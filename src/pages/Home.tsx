@@ -99,7 +99,7 @@ const [subscribed, setSubscribed] = useState(false);
               Start Your Free Journey
             </button>
             <button
-              onClick={() => navigate('/about')}
+              onClick={() => navigate('/mock-test-generator')}
               className="bg-gradient-to-r from-orange-400 to-red-600 text-white font-semibold py-4 px-12 rounded-full text-xl md:text-2xl transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[var(--color-text-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-background-primary)] transform hover:scale-105"
             >
               Learn More
