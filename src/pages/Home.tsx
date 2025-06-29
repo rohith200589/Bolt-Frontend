@@ -93,13 +93,13 @@ const [subscribed, setSubscribed] = useState(false);
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-slide-in-up delay-400">
             <button
-              onClick={() => navigate('/quiz')}
+              onClick={() => navigate('/mock-test-generator')}
               className="bg-gradient-to-r from-cyan-400 to-[var(--color-button-primary-hover)] text-white font-semibold py-4 px-12 rounded-full text-xl md:text-2xl transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[var(--color-text-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-background-primary)] transform hover:scale-105 button-glow"
             >
               Start Your Free Journey
             </button>
             <button
-              onClick={() => navigate('/mock-test-generator')}
+              onClick={() => navigate('/about')}
               className="bg-gradient-to-r from-orange-400 to-red-600 text-white font-semibold py-4 px-12 rounded-full text-xl md:text-2xl transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[var(--color-text-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-background-primary)] transform hover:scale-105"
             >
               Learn More
