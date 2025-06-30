@@ -86,6 +86,20 @@ const Home: React.FC<HomeProps> = () => {
       {/* Hero Section - Clean, High and Focused */}
       <section className="relative w-full overflow-hidden text-[var(--color-hero-text)] pt-20 pb-40 md:pt-32 md:pb-56 lg:pt-20 lg:pb-36 text-center transform-gpu transition-all duration-700 ease-in-out">
         <div className="container mx-auto px-6 relative z-10 flex flex-col items-center max-w-6xl">
+          {/* Moved Bolt.new Badge here */}
+          <a
+            href="https://bolt.new/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-8" // Added margin-bottom for spacing
+          >
+            <img
+              src={blackCircleBadge} // Using the imported PNG
+              alt="Bolt.new Badge"
+              // Set width and height to original (360x360)
+              className="w-[360px] h-[360px] mx-auto" // mx-auto to center it
+            />
+          </a>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 animate-slide-in-up drop-shadow-lg">
             Master Any Subject with <span className="block mt-4 text-gradient-red-orange">Knovia AI</span>
           </h1>
@@ -374,7 +388,8 @@ const Home: React.FC<HomeProps> = () => {
         </div>
       </section>
 
-      {/* Bolt.new Badge */}
+      {/* The original position of the badge, now removed */}
+      {/*
       <a
         href="https://bolt.new/"
         target="_blank"
@@ -382,12 +397,12 @@ const Home: React.FC<HomeProps> = () => {
         className="bolt-badge"
       >
         <img
-          src={blackCircleBadge} // Using the imported PNG
+          src={blackCircleBadge}
           alt="Bolt.new Badge"
-          // Set width and height to 10 times the original (360x360 = 3600x3600)
           className="bolt-badge-image w-[3600px] h-[3600px]"
         />
       </a>
+      */}
     </div>
   );
 };
