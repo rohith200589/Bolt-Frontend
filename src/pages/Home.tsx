@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import MessageModal from '../components/MessageModal';
+import blackCircleBadge from '../images/black_circle_360x360.png'; // <--- NEW: Import the PNG
 
 interface HomeProps {
   // setCurrentPage prop is no longer needed when using React Router
@@ -378,12 +379,12 @@ const Home: React.FC<HomeProps> = () => {
         href="https://bolt.new/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bolt-badge"
+        className="bolt-badge" // Keep existing classes for positioning/animation
       >
         <img
-          src="https://github.com/kickiniteasy/bolt-hackathon-badge/raw/main/black_circle_360x360.svg"
+          src={blackCircleBadge} // <--- UPDATED: Using the imported PNG
           alt="Bolt.new Badge"
-          className="bolt-badge-image"
+          className="bolt-badge-image w-[3600px] h-[3600px]" // <--- NEW: Increased size (360px * 10 = 3600px)
         />
       </a>
     </div>
