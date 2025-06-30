@@ -78,20 +78,6 @@ const Home: React.FC<HomeProps> = () => {
 
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
-  // IMPORTANT:
-  // This is a placeholder path for the stylized 'b'.
-  // You MUST replace this with the actual path data for the stylized 'b'
-  // extracted from a vector graphics editor (e.g., Illustrator, Inkscape, Figma).
-  //
-  // To get the exact 'b' path:
-  // 1. Open your 'black_circle_360x360.png' in a vector editor.
-  // 2. Trace the 'b' shape with the pen tool.
-  // 3. Export only that 'b' shape as an SVG, or copy its 'd' attribute directly.
-  //
-  // The example below is just a simple 'b' shape for structural completeness, NOT the one from your image.
-  const bPathData = "M 40 20 L 40 80 L 60 80 A 20 20 0 0 0 60 60 L 40 60 A 10 10 0 0 0 40 50 A 10 10 0 0 0 60 50 L 60 20 Z";
-
-
   return (
     <div className="fade-in min-h-[calc(100vh-160px)] flex flex-col items-center">
       {showAlert && <MessageModal message={alertMessage} type={alertType} onClose={closeAlert} />}
@@ -128,9 +114,11 @@ const Home: React.FC<HomeProps> = () => {
           <h2 className="text-4xl md:text-6xl font-extrabold text-center mb-16 text-gradient-blue-green animate-slide-in-up">
             An Intuitive Platform, Powering Your Growth
           </h2>
+          {/* Modified: Added flex and overflow-x-auto for horizontal scroll with hidden scrollbar */}
           <div className="flex overflow-x-auto pb-6 space-x-8 lg:space-x-10 scrollbar-hide">
+            {/* Feature Card 1: AI-Powered Learning */}
             <div
-              className="min-w-[350px] bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-100"
+              className="min-w-[350px]  bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-100"
               onClick={() => navigate('/quiz')}
             >
               <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-1)] to-blue-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
@@ -143,6 +131,7 @@ const Home: React.FC<HomeProps> = () => {
                 Unlock complex topics with dynamic video explanations and deep dives, tailored by AI.
               </p>
             </div>
+            {/* Adaptive Mock Tests (first instance) */}
             <div
               className="min-w-[350px] bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-300"
               onClick={() => navigate('/mock-test-generator')}
@@ -157,11 +146,16 @@ const Home: React.FC<HomeProps> = () => {
                 Simulate exam conditions with intelligently generated mock tests, focusing on your weakest areas.
               </p>
             </div>
+            {/* Feature Card 2: Strategic Progress Tracking */}
+
+
+            {/* Adaptive Mock Tests (second instance, if desired to keep a duplicate for scrolling effect) */}
             <div
               className="min-w-[350px] flex-wrap-0 bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-300"
               onClick={() => navigate('/ai-content-visualizer')}
             >
               <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-4)] to-blue-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
+                {/* SVG icon representing data visualization or a screen with a graph */}
                 <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 10h2v7H6zm3 0h2v7H9zm3 0h2v7h-2zm3 0h2v7h-2z"/>
                 </svg>
@@ -173,7 +167,7 @@ const Home: React.FC<HomeProps> = () => {
             </div>
 
             <div
-              className="min-w-[350px] bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-200"
+              className="min-w-[350px]  bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-200"
               onClick={() => navigate('/progress')}
             >
               <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-2)] to-green-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
@@ -186,6 +180,7 @@ const Home: React.FC<HomeProps> = () => {
                 Visualize your learning path with detailed analytics and personalized insights for continuous improvement.
               </p>
             </div>
+            {/* Feature Card 4: Community Creation */}
             <div
               className="min-w-[350px] bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-400"
               onClick={() => navigate('/creator-studio')}
@@ -378,63 +373,18 @@ const Home: React.FC<HomeProps> = () => {
         </div>
       </section>
 
-      {/* Bolt.new Badge - SVG EMBEDDED DIRECTLY AND FIXED POSITIONED */}
+      {/* Bolt.new Badge */}
       <a
         href="https://bolt.new/"
         target="_blank"
         rel="noopener noreferrer"
-        // Applying fixed positioning and setting its location
-        // You can adjust these classes (bottom-4 right-4) as needed
-        className="fixed bottom-4 right-4 z-50 w-24 h-24 sm:w-32 sm:h-32 transform transition-transform duration-300 hover:scale-110"
-        aria-label="Powered by Bolt.New" // Good for accessibility
+        className="bolt-badge"
       >
-        <svg
-          width="100%" // Use 100% to fill the 'a' tag's dimensions
-          height="100%"
-          viewBox="0 0 100 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-labelledby="titleId descId"
-        >
-          <title id="titleId">Bolt.New Badge Logo</title>
-          <desc id="descId">Circular black and white logo with text "POWERED BY BOLT.NEW" and "MADE IN BOLT.NEW" around a stylized 'b'.</desc>
-          
-          {/* Black Circle Background with White Stroke */}
-          <circle cx="50" cy="50" r="49.5" fill="black" stroke="white" strokeWidth="1" />
-
-          {/* Path for the top curved text */}
-          {/* Adjusted path for better text curve fitting based on common badge designs */}
-          <path
-            id="topTextPath"
-            d="M 50,50 m -40,0 a 40,40 0 1,1 80,0" // Smaller radius for text to sit further in
-            fill="none"
-          />
-
-          {/* Path for the bottom curved text */}
-          {/* Adjusted path for better text curve fitting */}
-          <path
-            id="bottomTextPath"
-            d="M 50,50 m 40,0 a 40,40 0 1,1 -80,0" // Reversed direction for bottom text
-            fill="none"
-          />
-
-          {/* Top Text */}
-          <text fill="white" fontSize="5.5" fontFamily="Arial, sans-serif" textAnchor="middle">
-            <textPath href="#topTextPath" startOffset="50%" dominantBaseline="hanging"> {/* dominantBaseline helps adjust vertical position */}
-              POWERED BY BOLT.NEW
-            </textPath>
-          </text>
-
-          {/* Bottom Text */}
-          <text fill="white" fontSize="5.5" fontFamily="Arial, sans-serif" textAnchor="middle" transform="rotate(180 50 50)"> {/* Rotate for proper reading direction */}
-            <textPath href="#bottomTextPath" startOffset="50%" dominantBaseline="auto"> {/* dominantBaseline helps adjust vertical position */}
-              MADE IN BOLT.NEW
-            </textPath>
-          </text>
-
-          {/* Stylized 'b' - REPLACE THIS PLACEHOLDER PATH DATA WITH YOUR ACTUAL 'b' PATH */}
-          <path d={bPathData} fill="white" />
-        </svg>
+        <img
+          src="https://github.com/kickiniteasy/bolt-hackathon-badge/raw/main/black_circle_360x360.svg"
+          alt="Bolt.new Badge"
+          className="bolt-badge-image"
+        />
       </a>
     </div>
   );
