@@ -1,15 +1,15 @@
 // Home.tsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import MessageModal from '../components/MessageModal';
-import blackCircleBadge from '../images/black_circle_360x360.png'; // <--- NEW: Import the PNG
+import blackCircleBadge from '../images/black_circle_360x360.png'; // Corrected import path for PNG
 
 interface HomeProps {
   // setCurrentPage prop is no longer needed when using React Router
 }
 
 const Home: React.FC<HomeProps> = () => {
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
@@ -379,12 +379,13 @@ const Home: React.FC<HomeProps> = () => {
         href="https://bolt.new/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bolt-badge" // Keep existing classes for positioning/animation
+        className="bolt-badge"
       >
         <img
-          src={blackCircleBadge} // <--- UPDATED: Using the imported PNG
+          src={blackCircleBadge} // Using the imported PNG
           alt="Bolt.new Badge"
-          className="bolt-badge-image w-[3600px] h-[3600px]" // <--- NEW: Increased size (360px * 10 = 3600px)
+          // Set width and height to 10 times the original (360x360 = 3600x3600)
+          className="bolt-badge-image w-[3600px] h-[3600px]"
         />
       </a>
     </div>
