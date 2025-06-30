@@ -78,6 +78,14 @@ const Home: React.FC<HomeProps> = () => {
 
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
+  // IMPORTANT: Placeholder for the 'b' path data.
+  // You MUST replace this with the actual path data for the stylized 'b'
+  // extracted from a vector graphics editor (e.g., Illustrator, Inkscape, Figma).
+  // A simple example path for a 'b' (not accurate for your logo, just for structure):
+  const bPathData = "M40 20 C30 20 20 30 20 40 C20 50 30 60 40 60 H45 V80 H55 V60 H60 C70 60 80 50 80 40 C80 30 70 20 60 20 H40 Z M40 30 H50 C55 30 60 35 60 40 C60 45 55 50 50 50 H40 V30 Z";
+  // The original image's 'b' is quite distinct, so use a tracing tool.
+
+
   return (
     <div className="fade-in min-h-[calc(100vh-160px)] flex flex-col items-center">
       {showAlert && <MessageModal message={alertMessage} type={alertType} onClose={closeAlert} />}
@@ -373,18 +381,59 @@ const Home: React.FC<HomeProps> = () => {
         </div>
       </section>
 
-      {/* Bolt.new Badge */}
+      {/* Bolt.new Badge - SVG EMBEDDED DIRECTLY */}
       <a
         href="https://bolt.new/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bolt-badge"
+        className="bolt-badge" // Keep this class if you have existing CSS for it
       >
-        <img
-          src="https://github.com/kickiniteasy/bolt-hackathon-badge/raw/main/black_circle_360x360.svg"
-          alt="Bolt.new Badge"
-          className="bolt-badge-image"
-        />
+        <svg
+          width="100" // Set a default size, can be overridden by Tailwind classes on the `a` tag
+          height="100"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="bolt-badge-image" // Keep this class if you have existing CSS for it
+          aria-labelledby="titleId descId"
+        >
+          <title id="titleId">Bolt.New Badge Logo</title>
+          <desc id="descId">Circular black and white logo with text "POWERED BY BOLT.NEW" and "MADE IN BOLT.NEW" around a stylized 'b'.</desc>
+          
+          {/* Black Circle Background with White Stroke */}
+          <circle cx="50" cy="50" r="49.5" fill="black" stroke="white" strokeWidth="1" />
+
+          {/* Path for the top curved text */}
+          <path
+            id="topTextPath"
+            d="M 50,50 m -45,0 a 45,45 0 1,1 90,0"
+            fill="none"
+          />
+
+          {/* Path for the bottom curved text */}
+          <path
+            id="bottomTextPath"
+            d="M 50,50 m 45,0 a 45,45 0 1,1 -90,0"
+            fill="none"
+          />
+
+          {/* Top Text */}
+          <text fill="white" fontSize="5.5" fontFamily="Arial, sans-serif" textAnchor="middle">
+            <textPath href="#topTextPath" startOffset="50%">
+              POWERED BY BOLT.NEW
+            </textPath>
+          </text>
+
+          {/* Bottom Text */}
+          <text fill="white" fontSize="5.5" fontFamily="Arial, sans-serif" textAnchor="middle">
+            <textPath href="#bottomTextPath" startOffset="50%">
+              MADE IN BOLT.NEW
+            </textPath>
+          </text>
+
+          {/* Stylized 'b' - REPLACE THIS PLACEHOLDER PATH DATA */}
+          <path d={bPathData} fill="white" />
+        </svg>
       </a>
     </div>
   );
