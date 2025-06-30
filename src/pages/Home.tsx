@@ -18,7 +18,7 @@ const Home: React.FC<HomeProps> = () => {
     setShowAlert(false);
     setAlertMessage('');
   };
-const [subscribed, setSubscribed] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = () => {
     setSubscribed(true);
@@ -147,26 +147,26 @@ const [subscribed, setSubscribed] = useState(false);
               </p>
             </div>
             {/* Feature Card 2: Strategic Progress Tracking */}
-           
+
 
             {/* Adaptive Mock Tests (second instance, if desired to keep a duplicate for scrolling effect) */}
-          <div
-  className="min-w-[350px] flex-wrap-0 bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-300"
-  onClick={() => navigate('/ai-content-visualizer')}
->
-  <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-4)] to-blue-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
-    {/* SVG icon representing data visualization or a screen with a graph */}
-    <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 10h2v7H6zm3 0h2v7H9zm3 0h2v7h-2zm3 0h2v7h-2z"/>
-    </svg>
-  </div>
-  <h3 className="text-2xl font-bold mb-4 text-gradient-gold">AI Content Visualizer</h3>
-  <p className="text-[var(--color-text-secondary)] leading-relaxed">
-    Transform your notes and concepts into dynamic visual representations with AI, making complex information easier to understand and retain.
-  </p>
-</div>
+            <div
+              className="min-w-[350px] flex-wrap-0 bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-300"
+              onClick={() => navigate('/ai-content-visualizer')}
+            >
+              <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-4)] to-blue-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
+                {/* SVG icon representing data visualization or a screen with a graph */}
+                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 10h2v7H6zm3 0h2v7H9zm3 0h2v7h-2zm3 0h2v7h-2z"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gradient-gold">AI Content Visualizer</h3>
+              <p className="text-[var(--color-text-secondary)] leading-relaxed">
+                Transform your notes and concepts into dynamic visual representations with AI, making complex information easier to understand and retain.
+              </p>
+            </div>
 
- <div
+            <div
               className="min-w-[350px]  bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-200"
               onClick={() => navigate('/progress')}
             >
@@ -355,23 +355,37 @@ const [subscribed, setSubscribed] = useState(false);
           <p className="text-lg md:text-xl opacity-90 mb-12 max-w-3xl mx-auto animate-slide-in-up delay-200">
             Join the Knovia AI community today and experience the future of personalized education. It's free to start!
           </p>
-           <div className="relative">
-      <button
-        onClick={handleSubscribe}
-        className="bg-white text-[var(--color-text-accent)] font-bold py-4 px-12 rounded-full text-xl md:text-2xl transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-75 transform hover:scale-105 button-glow"
-      >
-        Subscribe to our newsletter
-      </button>
+          <div className="relative">
+            <button
+              onClick={handleSubscribe}
+              className="bg-white text-[var(--color-text-accent)] font-bold py-4 px-12 rounded-full text-xl md:text-2xl transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-75 transform hover:scale-105 button-glow"
+            >
+              Subscribe to our newsletter
+            </button>
 
-      {/* Popup */}
-      {subscribed && (
-        <div className="absolute top-full mt-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition-opacity duration-300">
-          Subscribed successfully!
-        </div>
-      )}
-    </div>
+            {/* Popup */}
+            {subscribed && (
+              <div className="absolute top-full mt-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition-opacity duration-300">
+                Subscribed successfully!
+              </div>
+            )}
+          </div>
         </div>
       </section>
+
+      {/* Bolt.new Badge */}
+      <a
+        href="https://bolt.new/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bolt-badge"
+      >
+        <img
+          src="https://github.com/kickiniteasy/bolt-hackathon-badge/raw/main/black_circle_360x360.svg"
+          alt="Bolt.new Badge"
+          className="bolt-badge-image"
+        />
+      </a>
     </div>
   );
 };
