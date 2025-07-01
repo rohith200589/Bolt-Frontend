@@ -83,7 +83,7 @@ const Home: React.FC<HomeProps> = () => {
     <div className="fade-in min-h-[calc(100vh-160px)] flex flex-col items-center">
       {showAlert && <MessageModal message={alertMessage} type={alertType} onClose={closeAlert} />}
 
-      {/* Floating Badge */}
+      {/* This is the floating badge. It uses a fixed position to stay in place on the screen. */}
       <a
         href="https://bolt.new/"
         target="_blank"
@@ -93,7 +93,7 @@ const Home: React.FC<HomeProps> = () => {
         <img
           src={blackCircleBadge}
           alt="Bolt.new Badge"
-          className="w-[60px] h-[60px]" // Corrected size for the floating badge
+          className="w-[60px] h-[60px]" // You can adjust the size here.
         />
       </a>
 
