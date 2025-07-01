@@ -87,7 +87,9 @@ const Home: React.FC<HomeProps> = () => {
       <section className="relative w-full overflow-hidden text-[var(--color-hero-text)] pt-20 pb-40 md:pt-32 md:pb-56 lg:pt-20 lg:pb-36 text-center transform-gpu transition-all duration-700 ease-in-out">
         <div className="container mx-auto px-6 relative z-10 flex flex-col items-center max-w-6xl">
           {/* Moved Bolt.new Badge here */}
-          <a
+<div>
+  <div>
+              <a
             href="https://bolt.new/"
             target="_blank"
             rel="noopener noreferrer"
@@ -100,12 +102,14 @@ const Home: React.FC<HomeProps> = () => {
               className="w-[360px] h-[360px] mx-auto" // mx-auto to center it
             />
           </a>
+  </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 animate-slide-in-up drop-shadow-lg">
             Master Any Subject with <span className="block mt-4 text-gradient-red-orange">Knovia AI</span>
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl opacity-95 mb-16 max-w-4xl mx-auto font-light animate-slide-in-up delay-200">
             Intelligent learning, personalized paths. Your future, amplified.
           </p>
+          </div>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-slide-in-up delay-400">
             <button
               onClick={() => navigate('/mock-test-generator')}
