@@ -1,6 +1,6 @@
 // src/components/HelpActionButton.tsx
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react'; // Import Sparkles and X from lucide-react
+import { X } from 'lucide-react'; // Import X from lucide-react
 import blackCircleBadge from '../images/black_circle_360x360.png'; // Corrected import path for PNG
 
 interface HelpActionButtonProps {
@@ -27,22 +27,26 @@ const HelpActionButton: React.FC<HelpActionButtonProps> = ({ onClick, isOpen }) 
 
   // Define gradients directly within the component
   const lightThemeGradient = 'linear-gradient(to right top, #00c6ff, #0072ff, #6a00ff)'; // Light blue to purple
-  const darkThemeGradient = 'linear-gradient(to right top, #3f5efb, #fc466b, #ffa800)';   // Deeper blue to orange/gold
+  const darkThemeGradient = 'linear-gradient(to right top, #3f5efb, #fc466b, #ffa800)'; // Deeper blue to orange/gold
 
   const iconGradientStyle: React.CSSProperties = {
     backgroundImage: currentTheme === 'dark' ? darkThemeGradient : lightThemeGradient,
     WebkitBackgroundClip: 'text', // For Webkit browsers
-    backgroundClip: 'text',       // Standard
-    color: 'transparent',         // Make the icon's color transparent
-    display: 'inline-block',      // Ensures properties apply correctly
+    backgroundClip: 'text', // Standard
+    color: 'transparent', // Make the icon's color transparent
+    display: 'inline-block', // Ensures properties apply correctly
+  };
+
+  const handleClick = () => {
+    window.location.href = 'https://bolt.new/';
   };
 
   return (
     <button
-      onclick="window.location.href=https://bolt.new/"
+      onClick={handleClick}
       className={`fixed bottom-4 right-4 md:right-8 rounded-full transition-all duration-300 z-50
-                   hover:bg-gray-100 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50
-                   overflow-hidden w-36 h-36`} // Increased size and added overflow-hidden
+                  hover:bg-gray-100 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50
+                  overflow-hidden w-36 h-36`} // Increased size and added overflow-hidden
       aria-label={isOpen ? "Close AI Assistant" : "Open AI Assistant"}
     >
       {isOpen ? (
