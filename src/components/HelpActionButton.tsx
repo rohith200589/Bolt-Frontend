@@ -1,6 +1,7 @@
 // src/components/HelpActionButton.tsx
 import React, { useState, useEffect } from 'react';
-import { Sparkles, X } from 'lucide-react'; // Import Sparkles and X from lucide-react
+import { X } from 'lucide-react'; // Import Sparkles and X from lucide-react
+import blackCircleBadge from '../images/black_circle_360x360.png'; // Corrected import path for PNG
 
 interface HelpActionButtonProps {
   onClick: () => void;
@@ -48,8 +49,8 @@ const HelpActionButton: React.FC<HelpActionButtonProps> = ({ onClick, isOpen }) 
         // Lucide X icon for close, with specific color
         <X size={24} style={{ color: '#333333' }} /> // Adjust size if 'lg' equivalent is needed for Lucide
       ) : (
-        // Lucide Sparkles icon with gradient style
-        <Sparkles size={24} style={{color: '#11EBFFFF' }} /> // Adjust size if 'lg' equivalent is needed for Lucide
+        // Replaced Sparkles with the PNG image
+        <img src={blackCircleBadge} alt="Help AI Assistant" className="w-6 h-6" />
       )}
     </button>
   );
