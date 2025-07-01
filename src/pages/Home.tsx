@@ -86,7 +86,7 @@ const Home: React.FC<HomeProps> = () => {
       {/* Hero Section - Clean, High and Focused */}
       <section className="relative w-full overflow-hidden text-[var(--color-hero-text)] pt-20 pb-40 md:pt-32 md:pb-56 lg:pt-20 lg:pb-36 text-center transform-gpu transition-all duration-700 ease-in-out">
         <div className="container mx-auto px-6 relative z-10 flex flex-col items-center max-w-6xl">
-          {/* Moved Bolt.new Badge here */}
+          
 <div>
   <div>
               <a
