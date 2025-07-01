@@ -40,9 +40,10 @@ const HelpActionButton: React.FC<HelpActionButtonProps> = ({ onClick, isOpen }) 
   return (
     <button
       onClick={onClick}
-      className={`fixed bottom-4 right-4 md:right-8 p-4 rounded-full transition-all duration-300 z-50
+      className={`fixed bottom-4 right-4 md:right-8 rounded-full transition-all duration-300 z-50
                    hover:bg-gray-100 ring-4 ring-blue-400
-                  flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50`}
+                  flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50
+                   overflow-hidden w-16 h-16`} // Increased size and added overflow-hidden
       aria-label={isOpen ? "Close AI Assistant" : "Open AI Assistant"}
     >
       {isOpen ? (
@@ -50,7 +51,7 @@ const HelpActionButton: React.FC<HelpActionButtonProps> = ({ onClick, isOpen }) 
         <X size={24} style={{ color: '#333333' }} /> // Adjust size if 'lg' equivalent is needed for Lucide
       ) : (
         // Replaced Sparkles with the PNG image
-        <img src={blackCircleBadge} alt="Help AI Assistant" className="w-6 h-6" />
+        <img src={blackCircleBadge} alt="Help AI Assistant" className="w-full h-full object-cover" />
       )}
     </button>
   );
