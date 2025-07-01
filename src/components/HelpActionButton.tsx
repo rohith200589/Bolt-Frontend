@@ -42,7 +42,7 @@ const HelpActionButton: React.FC<HelpActionButtonProps> = ({ onClick, isOpen }) 
       onClick={onClick}
       className={`fixed bottom-4 right-4 md:right-8 rounded-full transition-all duration-300 z-50
                    hover:bg-gray-100 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50
-                   overflow-hidden w-16 h-16`} // Increased size and added overflow-hidden
+                   overflow-hidden w-36 h-36`} // Increased size and added overflow-hidden
       aria-label={isOpen ? "Close AI Assistant" : "Open AI Assistant"}
     >
       {isOpen ? (
