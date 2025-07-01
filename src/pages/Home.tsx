@@ -83,33 +83,29 @@ const Home: React.FC<HomeProps> = () => {
     <div className="fade-in min-h-[calc(100vh-160px)] flex flex-col items-center">
       {showAlert && <MessageModal message={alertMessage} type={alertType} onClose={closeAlert} />}
 
+      {/* Floating Badge */}
+      <a
+        href="https://bolt.new/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-50 rounded-full shadow-2xl transition-transform duration-300 hover:scale-110"
+      >
+        <img
+          src={blackCircleBadge}
+          alt="Bolt.new Badge"
+          className="w-[60px] h-[60px]" // Corrected size for the floating badge
+        />
+      </a>
+
       {/* Hero Section - Clean, High and Focused */}
       <section className="relative w-full overflow-hidden text-[var(--color-hero-text)] pt-20 pb-40 md:pt-32 md:pb-56 lg:pt-20 lg:pb-36 text-center transform-gpu transition-all duration-700 ease-in-out">
         <div className="container mx-auto px-6 relative z-10 flex flex-col items-center max-w-6xl">
-          
-<div>
-  <div>
-              <a
-            href="https://bolt.new/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-8" // Added margin-bottom for spacing
-          >
-            <img
-              src={blackCircleBadge} // Using the imported PNG
-              alt="Bolt.new Badge"
-              // Set width and height to original (360x360)
-              className="w-[360px] h-[360px] mx-auto" // mx-auto to center it
-            />
-          </a>
-  </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 animate-slide-in-up drop-shadow-lg">
             Master Any Subject with <span className="block mt-4 text-gradient-red-orange">Knovia AI</span>
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl opacity-95 mb-16 max-w-4xl mx-auto font-light animate-slide-in-up delay-200">
             Intelligent learning, personalized paths. Your future, amplified.
           </p>
-          </div>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-slide-in-up delay-400">
             <button
               onClick={() => navigate('/mock-test-generator')}
@@ -137,12 +133,12 @@ const Home: React.FC<HomeProps> = () => {
           <div className="flex overflow-x-auto pb-6 space-x-8 lg:space-x-10 scrollbar-hide">
             {/* Feature Card 1: AI-Powered Learning */}
             <div
-              className="min-w-[350px]  bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-100"
+              className="min-w-[350px] bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-100"
               onClick={() => navigate('/quiz')}
             >
               <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-1)] to-blue-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
                 <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gradient-red-orange">AI-Powered Explanations</h3>
@@ -157,7 +153,7 @@ const Home: React.FC<HomeProps> = () => {
             >
               <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-3)] to-purple-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
                 <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gradient-gold">Adaptive Mock Tests</h3>
@@ -176,7 +172,7 @@ const Home: React.FC<HomeProps> = () => {
               <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-4)] to-blue-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
                 {/* SVG icon representing data visualization or a screen with a graph */}
                 <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 10h2v7H6zm3 0h2v7H9zm3 0h2v7h-2zm3 0h2v7h-2z"/>
+                  <path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 10h2v7H6zm3 0h2v7H9zm3 0h2v7h-2zm3 0h2v7h-2z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gradient-gold">AI Content Visualizer</h3>
@@ -186,12 +182,12 @@ const Home: React.FC<HomeProps> = () => {
             </div>
 
             <div
-              className="min-w-[350px]  bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-200"
+              className="min-w-[350px] bg-[var(--color-background-secondary)] rounded-3xl p-8 shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer flex flex-col items-center text-center border border-[var(--color-border)] animate-slide-in-up delay-200"
               onClick={() => navigate('/progress')}
             >
               <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-2)] to-green-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
                 <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 11V3H8v8H2v10h20V11h-6zM10 5h4v6h-4V5zm-4 14v-6h2v6H6zm12 0h-2v-6h2v6z"/>
+                  <path d="M16 11V3H8v8H2v10h20V11h-6zM10 5h4v6h-4V5zm-4 14v-6h2v6H6zm12 0h-2v-6h2v6z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gradient-purple-pink">Strategic Progress Tracking</h3>
@@ -206,7 +202,7 @@ const Home: React.FC<HomeProps> = () => {
             >
               <div className="p-6 rounded-full bg-gradient-to-br from-[var(--color-feature-icon-4)] to-orange-400 text-white mb-8 shadow-xl transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-300">
                 <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gradient-blue-green">Community Creation</h3>
@@ -227,7 +223,7 @@ const Home: React.FC<HomeProps> = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="flex flex-col items-center animate-slide-in-up delay-100">
               <div className="p-6 rounded-full bg-[var(--color-feature-icon-1)] text-white mb-8 shadow-xl">
-                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9v-6h2v6z"/></svg>
+                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9v-6h2v6z" /></svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gradient-blue-green">1. Input Your Topic</h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
@@ -236,7 +232,7 @@ const Home: React.FC<HomeProps> = () => {
             </div>
             <div className="flex flex-col items-center animate-slide-in-up delay-200">
               <div className="p-6 rounded-full bg-[var(--color-feature-icon-2)] text-white mb-8 shadow-xl">
-                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3v8H9V8h2zm3 0v8h-2V8h2zm3 0v8h-2V8h2z"/></svg>
+                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3v8H9V8h2zm3 0v8h-2V8h2zm3 0v8h-2V8h2z" /></svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gradient-purple-pink">2. Get AI Explanations</h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
@@ -245,7 +241,7 @@ const Home: React.FC<HomeProps> = () => {
             </div>
             <div className="flex flex-col items-center animate-slide-in-up delay-300">
               <div className="p-6 rounded-full bg-[var(--color-feature-icon-3)] text-white mb-8 shadow-xl">
-                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gradient-gold">3. Master with Quizzes</h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
@@ -297,7 +293,7 @@ const Home: React.FC<HomeProps> = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-center animate-slide-in-up delay-100">
               <div className="p-6 rounded-full bg-[var(--color-feature-icon-4)] text-white mb-8 shadow-xl">
-                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9v-6h2v6z"/></svg>
+                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9v-6h2v6z" /></svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gradient-red-orange">Cutting-Edge AI</h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
@@ -306,7 +302,7 @@ const Home: React.FC<HomeProps> = () => {
             </div>
             <div className="flex flex-col items-center text-center animate-slide-in-up delay-200">
               <div className="p-6 rounded-full bg-[var(--color-feature-icon-2)] text-white mb-8 shadow-xl">
-                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gradient-blue-green">Continuous Improvement</h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
@@ -315,7 +311,7 @@ const Home: React.FC<HomeProps> = () => {
             </div>
             <div className="flex flex-col items-center text-center animate-slide-in-up delay-300">
               <div className="p-6 rounded-full bg-[var(--color-feature-icon-1)] text-white mb-8 shadow-xl">
-                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.38 0 2.5 1.12 2.5 2.5S13.38 11 12 11s-2.5-1.12-2.5-2.5S10.62 6 12 6zm0 14c-2.03 0-4.45-.72-6-2.68C6.01 15.15 8.94 14 12 14s5.99 1.15 6 3.32c-1.55 1.96-3.97 2.68-6 2.68z"/></svg>
+                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.38 0 2.5 1.12 2.5 2.5S13.38 11 12 11s-2.5-1.12-2.5-2.5S10.62 6 12 6zm0 14c-2.03 0-4.45-.72-6-2.68C6.01 15.15 8.94 14 12 14s5.99 1.15 6 3.32c-1.55 1.96-3.97 2.68-6 2.68z" /></svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gradient-purple-pink">User-Centric Design</h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
@@ -324,7 +320,7 @@ const Home: React.FC<HomeProps> = () => {
             </div>
             <div className="flex flex-col items-center text-center animate-slide-in-up delay-400">
               <div className="p-6 rounded-full bg-[var(--color-feature-icon-3)] text-white mb-8 shadow-xl">
-                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" /></svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gradient-gold">Rich Multimedia</h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
@@ -391,22 +387,6 @@ const Home: React.FC<HomeProps> = () => {
           </div>
         </div>
       </section>
-
-      {/* The original position of the badge, now removed */}
-      {/*
-      <a
-        href="https://bolt.new/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bolt-badge"
-      >
-        <img
-          src={blackCircleBadge}
-          alt="Bolt.new Badge"
-          className="bolt-badge-image w-[3600px] h-[3600px]"
-        />
-      </a>
-      */}
     </div>
   );
 };
