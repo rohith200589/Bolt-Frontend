@@ -1,7 +1,6 @@
 // src/components/HelpActionButton.tsx
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react'; // Import X from lucide-react
-
+import { X, MessageCircle } from 'lucide-react'; // Import X and chat icon from lucide-react
 
 interface HelpActionButtonProps {
   onClick: () => void;
@@ -14,7 +13,7 @@ const HelpActionButton: React.FC<HelpActionButtonProps> = ({ onClick, isOpen }) 
   useEffect(() => {
     const getThemeFromDOM = () => {
       const theme = document.documentElement.getAttribute('data-theme');
-      return (theme === 'dark' ? 'dark' : 'light');
+      return theme === 'dark' ? 'dark' : 'light';
     };
     setCurrentTheme(getThemeFromDOM());
 
@@ -31,10 +30,10 @@ const HelpActionButton: React.FC<HelpActionButtonProps> = ({ onClick, isOpen }) 
 
   const iconGradientStyle: React.CSSProperties = {
     backgroundImage: currentTheme === 'dark' ? darkThemeGradient : lightThemeGradient,
-    WebkitBackgroundClip: 'text', // For Webkit browsers
-    backgroundClip: 'text', // Standard
-    color: 'transparent', // Make the icon's color transparent
-    display: 'inline-block', // Ensures properties apply correctly
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+    color: 'transparent',
+    display: 'inline-block',
   };
 
   const handleClick = () => {
@@ -46,15 +45,13 @@ const HelpActionButton: React.FC<HelpActionButtonProps> = ({ onClick, isOpen }) 
       onClick={handleClick}
       className={`fixed bottom-4 right-4 md:right-8 rounded-full transition-all duration-300 z-50
                   hover:bg-gray-100 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50
-                  overflow-hidden w-36 h-36`} // Increased size and added overflow-hidden
+                  overflow-hidden w-20 h-20`} // Adjusted size to look cleaner
       aria-label={isOpen ? "Close AI Assistant" : "Open AI Assistant"}
     >
       {isOpen ? (
-        // Lucide X icon for close, with specific color
-        <X size={24} style={{ color: '#333333' }} /> // Adjust size if 'lg' equivalent is needed for Lucide
+        <X size={32} style={{ color: '#333333' }} />
       ) : (
-        // Replaced Sparkles with the PNG image
-        <img src={blackCircleBadge} alt="Help AI Assistant" className="w-full h-full object-cover" />
+        <MessageCircle size={40} style={iconGradientStyle} /> // Gradient chat icon
       )}
     </button>
   );
