@@ -1,6 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+// App.tsx (No Auth)
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
+
+// Components
 import Layout from './components/Layout';
+import VisualizerTutorialWrapper from './pages/PageLoaderWithTutorial';
+
+// Pages
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -11,18 +18,15 @@ import MockTestGenerator from './pages/MockTestGenerator';
 import CreatorStudio from './pages/CreatorStudio';
 import Quiz from './pages/convoAI.js';
 import TutorialPage from './pages/TutorialPage.js';
-import VisualizerTutorialWrapper from './pages/VisualizerTutorialWrapper';
-import { ThemeProvider } from './contexts/ThemeContext';
 
 const AppContent: React.FC = () => {
-  const location = useLocation();
-
   const getPageNameFromPath = (pathname: string) => {
     if (pathname === '/') return 'Home';
     const pathSegment = pathname.split('/')[1];
     return pathSegment || 'Home';
   };
 
+  const location = useLocation();
   const [currentPage, setCurrentPage] = useState<string>(getPageNameFromPath(location.pathname));
 
   useEffect(() => {
@@ -32,6 +36,7 @@ const AppContent: React.FC = () => {
   return (
     <Layout currentPage={currentPage} setCurrentPage={setCurrentPage}>
       <Routes>
+        {/* Public Routes (now everything is public) */}
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
