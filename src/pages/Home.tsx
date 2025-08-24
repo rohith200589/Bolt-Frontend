@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MessageModal from '../components/MessageModal';
-import blackCircleBadge from '../images/black_circle_360x360.png'; // Corrected import path for PNG
+
 
 interface HomeProps {
   // setCurrentPage prop is no longer needed when using React Router
