@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MessageModal from '../components/MessageModal';
-
+import { MessageCircle } from "lucide-react";
 
 interface HomeProps {
   // setCurrentPage prop is no longer needed when using React Router
@@ -91,11 +91,10 @@ const Home: React.FC<HomeProps> = () => {
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 rounded-full shadow-2xl transition-transform duration-300 hover:scale-110"
       >
-        <img
-          src={blackCircleBadge}
-          alt="Bolt.new Badge"
-          className="w-[60px] h-[60px]"
-        />
+        <MessageCircle 
+  size={60} 
+  className="text-blue-500" // You can swap for gradient or theme-based styles
+/>
       </a>
 
       {/* Hero Section - Clean, High and Focused */}
