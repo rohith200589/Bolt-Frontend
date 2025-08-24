@@ -1,7 +1,7 @@
 // src/components/HelpActionButton.tsx
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react'; // Import X from lucide-react
-import blackCircleBadge from '../images/black_circle_360x360.png'; // Corrected import path for PNG
+
 
 interface HelpActionButtonProps {
   onClick: () => void;
